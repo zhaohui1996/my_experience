@@ -1,0 +1,20 @@
+给定一个list A,所有元素均为整数,请利用list comprehension实现以下功能:
+A中的偶数求立方,且只保留立方小于P的结果,如,a=[0,1,2,3,4,5,6],P=100
+则出应为:[0,8,64]
+
+这个题意思是用列表生成式来做
+(1)
+A=[0,1,2,3,4,5,6]
+P=100
+list=[i**3 for i in A if i%2==0 and i**3<P]
+print(list)
+
+(2)也可以函数方式:
+def compre(A,P):
+    list=[]
+    for i in A:
+        if i%2==0:
+            if i**3<P:
+                list.append(i**3)
+    return list
+print(compre(A,P))
